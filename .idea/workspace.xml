@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5a066555-aa32-4312-b10f-7b57c184e4f3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JupyterTrust" id="bf97718c-a742-459c-b437-426704cba497" />
+  <component name="ProjectId" id="1WKjwIc3AQ2hdHFoAzr0POYRLcP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ga-dsi-12-git/classes" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a066555-aa32-4312-b10f-7b57c184e4f3" name="Default Changelist" comment="" />
+      <created>1578905417651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578905417651</updated>
+      <workItem from="1578905420295" duration="910000" />
+      <workItem from="1578913579265" duration="598000" />
+      <workItem from="1578914213690" duration="191000" />
+      <workItem from="1578914429160" duration="295000" />
+      <workItem from="1578915545499" duration="133000" />
+      <workItem from="1578920705819" duration="106000" />
+      <workItem from="1578960833860" duration="815000" />
+      <workItem from="1578961990281" duration="5041000" />
+      <workItem from="1578983413266" duration="486000" />
+      <workItem from="1578999394342" duration="126000" />
+      <workItem from="1578999534353" duration="3636000" />
+      <workItem from="1579010706432" duration="966000" />
+      <workItem from="1579012978711" duration="731000" />
+      <workItem from="1579040417932" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578962004595">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1578962004595" />
+    <state x="1232" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1579040417857">
+      <screen x="67" y="27" width="3773" height="1053" />
+    </state>
+    <state x="2536" y="366" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1578999588756" />
+    <state x="662" y="384" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578961990959" />
+    <state x="1232" y="384" key="com.intellij.ide.util.TipDialog/67.27.3773.1053@67.27.3773.1053" timestamp="1579040417857" />
+    <state x="2440" y="238" width="879" height="602" key="find.popup" timestamp="1579002253656">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2440" y="238" width="879" height="602" key="find.popup/67.27.1853.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579002253656" />
+  </component>
+</project>
