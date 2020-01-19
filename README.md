@@ -1,177 +1,212 @@
-# Project 2 - Ames Housing Data and Kaggle Challenge
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2 - Ames Housing Data and Kaggle Challenge
 
-Welcome to Project 2! It's time to start modeling.
+## Table of Contents
+- [Executive Summary](#Executive-Summary)
+- [Introduction](#Introduction)
+- [Problem Statement](#Problem-Statement)
+- [Overview](#Overview)
+- [Datasets](#Datasets)
+- [Conclusion and Recommendations](#Conclusion-and-Recommendations)
 
-**Primary Learning Objectives:**
-1. Creating and iteratively refining a regression model
-2. Using [Kaggle](https://www.kaggle.com/) to practice the modeling process
-3. Providing business insights through reporting and presentation.
+--- 
 
-You are tasked with creating a regression model based on the Ames Housing Dataset. This model will predict the price of a house at sale.
+### Executive Summary
 
-The Ames Housing Dataset is an exceptionally detailed and robust dataset with over 70 columns of different features relating to houses.
+The aim of this project is to build a regression model based on the Ames Housing Dataset of houses sold between year
+ 2006 and 2010 inclusive to predict the price of a house at sale and to investigate variables which have the greatest
+  influence on the price of a house.  
 
-Secondly, we are hosting a competition on Kaggle to give you the opportunity to practice the following skills:
-
-- Refining models over time
-- Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
-- The use of Kaggle as a place to practice data science
-
-As always, you will be submitting a technical report and a presentation. **You may find that the best model for Kaggle is not the best model to address your data science problem.**
-
-## Set-up
-
-Before you begin working on this project, please do the following:
-
-1. Sign up for an account on [Kaggle](https://www.kaggle.com/)
-2. **IMPORTANT**: Click this link ([Regression Challenge Sign Up](https://www.kaggle.com/t/cf68f4a276f44b59a3c6c843dbf9ed1e)) to **join** the competition (otherwise you will not be able to make submissions!)
-3. Review the material on the [DSI-US-6 Regression Challenge](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge)
-4. Review the [data description](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt).
-
-## The Modeling Process
-
-1. The train dataset has all of the columns that you will need to generate and refine your models. The test dataset has all of those columns except for the target that you are trying to predict in your Regression model.
-2. Generate your regression model using the training data. We expect that within this process, you'll be making use of:
-    - train-test split
-    - cross-validation / grid searching for hyperparameters
-    - strong exploratory data analysis to question correlation and relationship across predictive variables
-    - code that reproducibly and consistently applies feature transformation (such as the preprocessing library)
-3. Predict the values for your target column in the test dataset and submit your predictions to Kaggle to see how your model does against unknown data.
-    - **Note**: Kaggle expects to see your submissions in a specific format. Check the challenge's page to make sure you are formatting your CSVs correctly!
-    - **You are limited to models you've learned in class**. In other words, you cannot use XGBoost, Neural Networks or any other advanced model for this project.
-4. Evaluate your models!
-    - consider your evaluation metrics
-    - consider your baseline score
-    - how can your model be used for inference?
-    - why do you believe your model will generalize to new data?
-
-## Submission
-
-**Materials must be submitted by the beginning of class on Jan 17.**
-
-Your technical report will be hosted on Github Enterprise. Make sure it includes:
-
-- A README.md (that isn't this file)
-- Jupyter notebook(s) with your analysis and models (renamed to describe your project)
-- At least one successful prediction submission on [DSI-US-6 Regression Challenge](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge) --  you should see your name in the "[Leaderboard](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge/leaderboard)" tab.
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
-
-**Check with your local instructor for how they would like you to submit your repo for review.**
+Exploratory data analysis was first performed to investigate each predictor and target variable individually, and
+ also to investigate pairwise relationships between all variables, both predictors and target variable. The rationale
+  for exploratory data analysis was to investigate issues of multicollinearity and missing data and to effectively
+   deal with them.
+   
+Thereafter, four linear regression models were built namely ordinary least squares linear regression, lasso
+ regression, ridge regression, and elastic net regression. Cross-validation was performed to find the best
+  hyperparameters for the regularized regression models and the root mean squared error was used as an evaluation
+   metric to select the best model out of the four. The same steps were repeated to build another four linear
+    regression models after feature engineering was performed to build regression models that had better predictive
+     power.
+     
+ Lasso regression built on selected features, some of which were engineered, was selected as the best model as it had
+  the lowest root mean square error. Total Square Foot of the house had the largest absolute coefficient in the model
+   which suggests that it has the greatest influence on the Sale Price of a house. 
 
 ---
 
-## Presentation Structure
+### Introduction
 
-- **Must be within time limit established by local instructor.**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider the audience. **Check with your local instructor for direction**.
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
-
-Be sure to rehearse and time your presentation before class.
+This project comprises predictive and inferential analysis of regression models built on the Ames Housing Data of
+ houses sold between 2006 and 2010 inclusive. It studies and identifies trends in the housing data, and synthesizes information 
+ from outside research with the data analysis. 
+ In so doing, it aims to identify relevant features which could be used for building a regression model with good
+  predictive power which has low bias and low variance. 
+  Regression modeling was then performed with four different models namely ordinary least squares, lasso, ridge, and
+   elastic net and it was found that the lasso regression model had the lowest root mean square error. It was also
+    discovered that the total square foot of a house had the greatest influence on the price of a house.
 
 ---
 
-## Rubric
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
+### Problem Statement
 
-**Scores will be out of 27 points based on the 9 items in the rubric.** <br>
-*3 points per section*<br>
+To predict the sale price of a house in Ames, Iowa sold between 2006 and 2010 inclusive, and to identify the most
+ influential factor on the sale price of a house in the same context.
 
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
+---
 
-### The Data Science Process
+### Overview
 
-**Problem Statement**
-- Is it clear what the student plans to do?
-- What type of model will be developed?
-- How will success be evaluated?
-- Is the scope of the project appropriate?
-- Is it clear who cares about this or why this is important to investigate?
-- Does the student consider the audience and the primary and secondary stakeholders?
+The pipeline:
+- Data Cleaning
+- Exploratory Data Analysis
+- Data Visualization
+- Descriptive and Inferential Statistics
+- Pre-processing
+- Modeling
+- Outside Research
+- Conclusions and Recommendations
 
-**Data Cleaning and EDA**
-- Are missing values imputed appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-- Does the student address whether or not they are likely to be able to answer their problem statement with the provided data given what they've discovered during EDA?
+---
 
-**Preprocessing and Modeling**
-- Are categorical variables one-hot encoded?
-- Does the student investigate or manufacture features with linear relationships to the target?
-- Have the data been scaled appropriately?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student utilize feature selection to remove noisy or multi-collinear features?
-- Does the student test and evaluate a variety of models to identify a production algorithm (**AT MINIMUM:** linear regression, lasso, and ridge)?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
+### Datasets
 
-**Evaluation and Conceptual Understanding**
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Is more than one metric utilized in order to better assess performance?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
+#### Provided Data
 
-**Conclusion and Recommendations**
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
-- Does the conclusion answer the original problem statement?
-- Does the student address how findings of this research can be applied for the benefit of stakeholders?
-- Are future steps to move the project forward identified?
+For this project, there are four datasets provided:
 
-### Organization and Professionalism
+- [Train Data](data/train.csv)
+- [Train Data - Cleaned](data/train_cleaned.csv)
+- [Test Data](data/test_data.csv)
+- [Test Data - Cleaned](data/test_cleaned.csv)
 
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
+The train data and test data were originally provided. They have been processed by converting the data types into the
+ correct types (nominal, ordinal, discrete, continuous) and null values have been handled appropriately either by
+  filling them with the correct value if the null values are meaningful or imputed if they are missing values.
 
-**Visualizations**
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
+#### Data Dictionary
 
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Are `sklearn` methods used appropriately?
+|Feature|Type|Dataset|Description|
+|:---|:---|:---|:---|
+|**PID**|*category*|train, train_cleaned, test, test_cleaned|Parcel identification number  - can be used with city web site for parcel review|
+|**MS SubClass**|*category*|train, train_cleaned, test, test_cleaned|Identifies the type of dwelling involved in the sale|
+|**MS Zoning**|*category*|train, train_cleaned, test, test_cleaned|Identifies the general zoning classification of the sale|
+|**Lot Frontage**|*float*|train, train_cleaned, test, test_cleaned|Linear feet of street connected to property|
+|**Lot Area**|*float*|train, train_cleaned, test, test_cleaned|Lot size in square feet|
+|**Street**|*category*|train, train_cleaned, test, test_cleaned|Type of road access to property|
+|**Alley**|*category*|train, train_cleaned, test, test_cleaned|Type of alley access to property|
+|**Lot Shape**|*int*|train, train_cleaned, test, test_cleaned|General shape of property|
+|**Land Contour**|*category*|train, train_cleaned, test, test_cleaned|Flatness of the property|
+|**Utilities**|*int*|train, train_cleaned, test, test_cleaned|Type of utilities available|
+|**Lot Config**|*category*|train, train_cleaned, test, test_cleaned|Lot configuration|
+|**Land Slope**|*int*|train, train_cleaned, test, test_cleaned|Slope of property|
+|**Neighborhood**|*category*|train, train_cleaned, test, test_cleaned|Physical locations within Ames city limits|
+|**Condition 1**|*category*|train, train_cleaned, test, test_cleaned|Proximity to various conditions|
+|**Condition 2**|*category*|train, train_cleaned, test, test_cleaned|Proximity to various conditions (if more than one is present)|
+|**Bldg Type**|*category*|train, train_cleaned, test, test_cleaned|Type of dwelling|
+|**House Style**|*category*|train, train_cleaned, test, test_cleaned|Style of dwelling|
+|**Overall Qual**|*int*|train, train_cleaned, test, test_cleaned|Rates the overall material and finish of the house|
+|**Overall Cond**|*int*|train, train_cleaned, test, test_cleaned|Rates the overall condition of the house|
+|**Year Built**|*int*|train, train_cleaned, test, test_cleaned|Original construction date|
+|**Year Remod/Add**|*int*|train, train_cleaned, test, test_cleaned|Remodel date (same as construction date if no remodeling or additions)|
+|**Roof Style**|*category*|train, train_cleaned, test, test_cleaned|Type of roof|
+|**Roof Matl**|*category*|train, train_cleaned, test, test_cleaned|Roof material|
+|**Exterior 1st**|*category*|train, train_cleaned, test, test_cleaned|Exterior covering on house|
+|**Exterior 2nd**|*category*|train, train_cleaned, test, test_cleaned|Exterior covering on house (if more than one material)|
+|**Mas Vnr Type**|*category*|train, train_cleaned, test, test_cleaned|Masonry veneer type|
+|**Mas Vnr Area**|*float*|train, train_cleaned, test, test_cleaned|Masonry veneer area in square feet|
+|**Exter Qual**|*int*|train, train_cleaned, test, test_cleaned|Evaluates the quality of the material on the exterior|
+|**Exter Cond**|*int*|train, train_cleaned, test, test_cleaned|Evaluates the present condition of the material on the exterior|
+|**Foundation**|*category*|train, train_cleaned, test, test_cleaned|Type of foundation|
+|**Bsmt Qual**|*int*|train, train_cleaned, test, test_cleaned|Evaluates the height of the basement|
+|**Bsmt Cond**|*int*|train, train_cleaned, test, test_cleaned|Evaluates the general condition of the basement|
+|**Bsmt Exposure**|*int*|train, train_cleaned, test, test_cleaned|Refers to walkout or garden level walls|
+|**BsmtFin Type 1**|*int*|train, train_cleaned, test, test_cleaned|Rating of basement finished area|
+|**BsmtFin SF 1**|*float*|train, train_cleaned, test, test_cleaned|Type 1 finished square feet|
+|**BsmtFin Type 2**|*int*|train, train_cleaned, test, test_cleaned|Rating of basement finished area (if multiple types)|
+|**BsmtFin SF 2**|*float*|train, train_cleaned, test, test_cleaned|Type 2 finished square feet|
+|**Bsmt Unf SF**|*float*|train, train_cleaned, test, test_cleaned|Unfinished square feet of basement area|
+|**Total Bsmt SF**|*float*|train, train_cleaned, test, test_cleaned|Total square feet of basement area|
+|**Heating**|*category*|train, train_cleaned, test, test_cleaned|Type of heating|
+|**Heating QC**|*int*|train, train_cleaned, test, test_cleaned|Heating quality and condition|
+|**Central Air**|*int*|train, train_cleaned, test, test_cleaned|Central air conditioning|
+|**Electrical**|*int*|train, train_cleaned, test, test_cleaned|Electrical system|
+|**1st Flr SF**|*float*|train, train_cleaned, test, test_cleaned|First Floor square feet|
+|**2nd Flr SF**|*float*|train, train_cleaned, test, test_cleaned|Second floor square feet|
+|**Low Qual Fin SF**|*float*|train, train_cleaned, test, test_cleaned|Low quality finished square feet (all floors)|
+|**Gr Liv Area**|*float*|train, train_cleaned, test, test_cleaned|Above grade (ground) living area square feet|
+|**Bsmt Full Bath**|*int*|train, train_cleaned, test, test_cleaned|Basement full bathrooms|
+|**Bsmt Half Bath**|*int*|train, train_cleaned, test, test_cleaned|Basement half bathrooms|
+|**Full Bath**|*int*|train, train_cleaned, test, test_cleaned|Full bathrooms above grade|
+|**Half Bath**|*int*|train, train_cleaned, test, test_cleaned|Half baths above grade|
+|**Bedroom AbvGr**|*int*|train, train_cleaned, test, test_cleaned|Bedrooms above grade (does NOT include basement bedrooms)|
+|**Kitchen AbvGr**|*int*|train, train_cleaned, test, test_cleaned|Kitchens above grade|
+|**Kitchen Qual**|*int*|train, train_cleaned, test, test_cleaned|Kitchen quality|
+|**TotRms AbvGrd**|*int*|train, train_cleaned, test, test_cleaned|Total rooms above grade (does not include bathrooms)|
+|**Functional**|*int*|train, train_cleaned, test, test_cleaned|Home functionality (Assume typical unless deductions are warranted)|
+|**Fireplaces**|*int*|train, train_cleaned, test, test_cleaned|Number of fireplaces|
+|**Fireplace Qu**|*int*|train, train_cleaned, test, test_cleaned|Fireplace quality|
+|**Garage Type**|*category*|train, train_cleaned, test, test_cleaned|Garage location|
+|**Garage Yr Blt**|*int*|train, train_cleaned, test, test_cleaned|Year garage was built|
+|**Garage Finish**|*int*|train, train_cleaned, test, test_cleaned|Interior finish of the garage|
+|**Garage Cars**|*int*|train, train_cleaned, test, test_cleaned|Size of garage in car capacity|
+|**Garage Area**|*float*|train, train_cleaned, test, test_cleaned|Size of garage in square feet|
+|**Garage Qual**|*int*|train, train_cleaned, test, test_cleaned|Garage quality|
+|**Garage Cond**|*int*|train, train_cleaned, test, test_cleaned|Garage condition|
+|**Paved Drive**|*int*|train, train_cleaned, test, test_cleaned|Paved driveway|
+|**Wood Deck SF**|*float*|train, train_cleaned, test, test_cleaned|Wood deck area in square feet|
+|**Open Porch SF**|*float*|train, train_cleaned, test, test_cleaned|Open porch area in square feet|
+|**Enclosed Porch**|*float*|train, train_cleaned, test, test_cleaned|Enclosed porch area in square feet|
+|**3Ssn Porch**|*float*|train, train_cleaned, test, test_cleaned|Three season porch area in square feet|
+|**Screen Porch**|*float*|train, train_cleaned, test, test_cleaned|Screen porch area in square feet|
+|**Pool Area**|*float*|train, train_cleaned, test, test_cleaned|Pool area in square feet|
+|**Pool QC**|*int*|train, train_cleaned, test, test_cleaned|Pool quality|
+|**Fence**|*int*|train, train_cleaned, test, test_cleaned|Fence quality|
+|**Misc Feature**|*category*|train, train_cleaned, test, test_cleaned|Miscellaneous feature not covered in other categories|
+|**Misc Val**|*float*|train, train_cleaned, test, test_cleaned|$Value of miscellaneous feature|
+|**Mo Sold**|*category*|train, train_cleaned, test, test_cleaned|Month Sold (MM)|
+|**Yr Sold**|*category*|train, train_cleaned, test, test_cleaned|Year Sold (YYYY)|
+|**Sale Type**|*category*|train, train_cleaned, test, test_cleaned|Type of sale|
+|**SalePrice**|*float*|train, train_cleaned|Sale price $$|
 
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
+### Conclusion and Recommendations
 
-### REMEMBER:
-
-This is a learning environment and you are encouraged to try new things, even if they end up failing. While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
+Numeric and ordinal variables were selected in order of their individual correlation with the target variable
+SalePrice, starting with the highest correlation. These variables were 
+`Full Bath`, `TotRms AbvGrd`, `Garage Cars`, `Age`, `Mas Vnr Area`, `Gr Liv Area`,
+`Garage Area`, `Total SF`, `Overall Qual`, `Exter Qual`, `Bsmt Qual`, `Kitchen Qual`,
+`Fireplace Qu`, `Garage Finish`
+ 
+`Age` removed as it presented problems of multicollinearity as it had a moderate correlation with each of the numeric
+and ordinal variables.
+  
+Polynomial features of `Total SF`, `Gr Liv Area`, `Garage Area` raised to the power of 2 were engineered and added
+to the model.
+  
+Nominal features were chosen based on their order of p-value, starting from the lowest: 
+`Street`, `Foundation`, `Garage Type`, `MS Zoning`, `Central Air`, `Heating`, `Condition 2`, `Roof Matl` 
+ 
+The final model which had the lowest RMSE was the Lasso regression model with the following variables:
+`Bsmt Qual`, `Central Air_1`, `Condition 2_Feedr`, `Condition 2_PosA`,
+`Condition 2_PosN`, `Condition 2_RRAe`, `Condition 2_RRAn`,
+`Condition 2_RRNn`, `Exter Qual`, `Fireplace Qu`, `Foundation_PConc`,
+`Foundation_Slab`, `Foundation_Stone`, `Foundation_Wood`, `Full Bath`,
+`Garage Area`, `Garage Area^2`, `Garage Cars`, `Garage Finish`,
+`Garage Type_Attchd`, `Garage Type_Basment`, `Garage Type_BuiltIn`,
+`Garage Type_CarPort`, `Garage Type_Detchd`, `Garage Type_None`,
+`Gr Liv Area^2`, `Heating_GasW`, `Heating_Grav`, `Heating_OthW`,
+`Heating_Wall`, `Kitchen Qual`, `MS Zoning_C (all)`,
+`MS Zoning_I (all)`, `MS Zoning_RH`, `MS Zoning_RL`, `MS Zoning_RM`,
+`Mas Vnr Area`, `Overall Qual`, `Roof Matl_Membran`,
+`Roof Matl_Tar&Grv`, `Roof Matl_WdShake`, `Roof Matl_WdShngl`,
+`Street_Pave`, `Total SF`, `Total SF^2`
+   
+The coefficients of `Total SF`, and `Total SF^2` had the highest absolute values of all the chosen features which
+ implied that `SalePrice` of a house is most heavily influenced by the size of the house.
+ 
+Take note that this model may not necessarily be reliable when predicting sale price houses in other cities such as
+ Los Angeles as buyers of houses in Los Angeles may not be as concerned about heating as they would houses in Ames
+ , Iowa since the winters in Los Angeles are much milder than the winters in Ames. 
+ 
+ Also, the model may be not be reliable when predicting sale prices of houses in Ames beyond the time period of 2006 and 2010
+  , as there may be factors affecting house prices which are unaccounted for in the model such as political
+   environment, interest rates, etc.
